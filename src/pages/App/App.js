@@ -3,6 +3,7 @@ import { useState } from 'react';
 import { Route, Switch, Redirect } from 'react-router-dom';
 
 import LoginPage from '../LoginPage/LoginPage';
+import MovieIndexPage from '../MovieIndexPage/MovieIndexPage';
 
 
 export default function App() {
@@ -12,7 +13,10 @@ export default function App() {
     <main className="App">
         { user ? 
           <>
-
+            <Route path="/movies">
+              <MovieIndexPage />
+            </Route>
+            <Redirect to="/movies" />
           </>
           :
           <LoginPage />
