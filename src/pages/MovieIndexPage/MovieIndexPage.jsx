@@ -1,4 +1,4 @@
-import MovieInfo from "../../components/MovieInfo/MovieInfo";
+import MovieInfo from "../../components/MovieDetailPage/MovieDetailPage";
 
 export default function MovieIndexPage() {
     return (

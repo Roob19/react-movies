@@ -1,5 +1,5 @@
 import React from 'react';
-import { movies } from '../../../public/data';
+import { movies } from '../../utilities/data';
 
 export default function MovieInfo() {
     return (

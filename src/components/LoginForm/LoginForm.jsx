@@ -1,8 +1,9 @@
+import React from 'react';
 import { Component } from "react";
 
 export default class LoginForm extends Component {
     state = {
-        username: 'Test', 
+        userName: '', 
         error: ''
     };
 
@@ -15,7 +16,10 @@ export default class LoginForm extends Component {
 
     handleSubmit = (e) => {
         e.preventDefault();
-        alert(JSON.stringify(this.state));
+        this.setState({
+            [e.target.name]: e.target.value, 
+            error: ''
+        });
     }
 
     render() {
@@ -24,7 +28,7 @@ export default class LoginForm extends Component {
                 <div className="form-container">
                     <form autoComplete="on" onSubmit={this.handleSubmit}>
                         <label>Username: </label>
-                        <input type="text" name="username" value={this.state.username} onChange={this.handleChange} required />
+                        <input type="text" name="userName" value={this.state.userName} onChange={this.handleChange} required />
                         <button type="submit" disabled={false}>LOGIN</button>
                     </form>
                 </div>
