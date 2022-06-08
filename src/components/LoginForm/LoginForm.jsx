@@ -1,9 +1,11 @@
-import React from 'react';
 import { Component } from "react";
+import { logIn } from '../../utilities/users-service';
 
 export default class LoginForm extends Component {
     state = {
-        userName: '', 
+        name: '', 
+        password: '', 
+        confirm: '', 
         error: ''
     };
 
@@ -14,12 +16,19 @@ export default class LoginForm extends Component {
         });
     }
 
-    handleSubmit = (e) => {
+    handleSubmit = async (e) => {
         e.preventDefault();
-        this.setState({
-            userName: FormData.userName, 
-            error: ''
-        });
+        // alert(JSON.stringify(this.state.user));
+        try {
+            const formData = {...this.state};
+            delete formData.error;
+            const user = await logIn(formData);
+        } catch {
+            this.setState({ error : 'Log In Failed in LoginForm.js handleSubmit - Try Again'});
+        }
+        // console.log(user);
+        // console.log(props);
+        console.log(this.state.name);
     }
 
     render() {
@@ -27,11 +36,16 @@ export default class LoginForm extends Component {
             <div>
                 <div className="form-container">
                     <form autoComplete="on" onSubmit={this.handleSubmit}>
-                        <label>Username: </label>
-                        <input type="text" name="userName" value={this.state.userName} onChange={this.handleChange} required />
-                        <button type="submit" disabled={false}>LOGIN</button>
+                        <label>Name: </label>
+                        <input type="text" name="name" value={this.state.name} onChange={this.handleChange} required />
+                        <label>Password</label>
+                        <input type="password" name="password" value={this.state.password} onChange={this.handleChange}
+                               required/>
+                        <label>Confirm</label>
+                        <input type="password" name="confirm" value={this.state.confirm} onChange={this.handleChange} required />
+                        <button type="submit">LOGIN</button>
                     </form>
-                    <p>User Name: {FormData.userName}</p>
+                    <p>User Name: {FormData.name}</p>
                 </div>
                 <p className="error-message">&nbsp;{this.state.error}</p>
             </div>

@@ -9,11 +9,11 @@ import ActorIndexPage from '../ActorIndexPage/ActorIndexPage';
 
 
 export default function App() {
-  const [user, setUser] = useState();
+  const [user, setUser] = useState({});
 
   return (
     <main className="App">React Movies
-      <p>{user.username}</p>
+      <p>{user.name}</p>
         { user ? 
           <>
             <NavBar />
@@ -28,7 +28,7 @@ export default function App() {
             </Switch>
           </>
           :
-            <LoginPage />
+            <LoginPage setUser={setUser} />
         }
     </main>
   );
