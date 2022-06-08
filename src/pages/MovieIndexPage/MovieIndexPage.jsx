@@ -1,12 +1,15 @@
-import MovieInfo from "../../components/MovieDetailPage/MovieDetailPage";
+import React from 'react';
+import MovieDetail from "../../components/MovieDetailPage/MovieDetailPage";
 
-export default function MovieIndexPage() {
+export default function MovieIndex({movies}) {
     return (
-        <>
+        <div>
             <h1>MovieIndexPage</h1>
-            <ul>
-                <MovieInfo />
-            </ul>
-        </>
+            <div className="MovieIndex">
+                {movies.map((movie, idx) => (
+                    <MovieDetail movie={movie} index={idx} />
+                ))}
+            </div>
+        </div>
     )
 }

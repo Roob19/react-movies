@@ -9,7 +9,7 @@ import ActorIndexPage from '../ActorIndexPage/ActorIndexPage';
 
 
 export default function App() {
-  const [user, setUser] = useState({});
+  const [user, setUser] = useState();
 
   return (
     <main className="App">React Movies
