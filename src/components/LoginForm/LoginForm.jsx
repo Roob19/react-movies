@@ -2,9 +2,21 @@ import { Component } from "react";
 
 export default class LoginForm extends Component {
     state = {
-        username: '', 
+        username: 'Test', 
         error: ''
     };
+
+    handleChange = (e) => {
+        this.setState({
+            [e.target.name]: e.target.value, 
+            error: ''
+        });
+    }
+
+    handleSubmit = (e) => {
+        e.preventDefault();
+        alert(JSON.stringify(this.state));
+    }
 
     render() {
         return (
