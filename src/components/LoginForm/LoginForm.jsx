@@ -17,7 +17,7 @@ export default class LoginForm extends Component {
     handleSubmit = (e) => {
         e.preventDefault();
         this.setState({
-            [e.target.name]: e.target.value, 
+            userName: FormData.userName, 
             error: ''
         });
     }
@@ -31,6 +31,7 @@ export default class LoginForm extends Component {
                         <input type="text" name="userName" value={this.state.userName} onChange={this.handleChange} required />
                         <button type="submit" disabled={false}>LOGIN</button>
                     </form>
+                    <p>User Name: {FormData.userName}</p>
                 </div>
                 <p className="error-message">&nbsp;{this.state.error}</p>
             </div>
