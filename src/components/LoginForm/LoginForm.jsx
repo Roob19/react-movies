@@ -51,7 +51,7 @@ export default class LoginForm extends Component {
                         <CButton type="submit">LOGIN</CButton>
                     </CForm>
                 </div>
-                <p className="error-message">&nbsp;{this.state.error}</p>
+                <h4 className="error-message">&nbsp;{this.state.error}</h4>
             </div>
         );
     }
