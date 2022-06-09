@@ -7,7 +7,7 @@ export default function NavBar({user}) {
                 &nbsp; | &nbsp;
             <Link to="/actors">Actor Index</Link>
                 &nbsp; | &nbsp;
-            <span to="/login">{user}</span>
+            <Link to="/login">Log In</Link>
         </nav>
     );
 }

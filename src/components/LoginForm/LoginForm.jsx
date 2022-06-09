@@ -1,5 +1,10 @@
 import { Component } from "react";
 import { logIn } from '../../utilities/users-service';
+import { CForm, 
+        CFormLabel, 
+        CFormText, 
+        CFormInput, 
+        CButton } from '@coreui/react';
 
 export default class LoginForm extends Component {
     state = {
@@ -28,24 +33,23 @@ export default class LoginForm extends Component {
         }
         // console.log(user);
         // console.log(props);
-        console.log(this.state.name);
+        // console.log(this.state.name);
     }
 
     render() {
         return (
             <div>
                 <div className="form-container">
-                    <form autoComplete="on" onSubmit={this.handleSubmit}>
-                        <label>Name: </label>
-                        <input type="text" name="name" value={this.state.name} onChange={this.handleChange} required />
-                        <label>Password</label>
-                        <input type="password" name="password" value={this.state.password} onChange={this.handleChange}
-                               required/>
-                        <label>Confirm</label>
-                        <input type="password" name="confirm" value={this.state.confirm} onChange={this.handleChange} required />
-                        <button type="submit">LOGIN</button>
-                    </form>
-                    <p>User Name: {FormData.name}</p>
+                    <CForm autoComplete="on" onSubmit={this.handleSubmit}>
+                        <CFormText>User Name: {FormData.name}</CFormText>
+                        <CFormLabel>Name: </CFormLabel>
+                        <CFormInput type="text" name="name" value={this.state.name} onChange={this.handleChange} required />
+                        <CFormLabel>Password</CFormLabel>
+                        <CFormInput type="password" name="password" value={this.state.password} onChange={this.handleChange} required/>
+                        <CFormLabel>Confirm</CFormLabel>
+                        <CFormInput type="password" name="confirm" value={this.state.confirm} onChange={this.handleChange} required />
+                        <CButton type="submit">LOGIN</CButton>
+                    </CForm>
                 </div>
                 <p className="error-message">&nbsp;{this.state.error}</p>
             </div>

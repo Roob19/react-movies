@@ -1,5 +1,5 @@
 import React from 'react';
-import MovieDetail from "../../components/MovieDetailPage/MovieDetailPage";
+import MovieCard from "../../components/MovieCard/MovieCard";
 
 export default function MovieIndex({movies}) {
     return (
@@ -7,7 +7,7 @@ export default function MovieIndex({movies}) {
             <h1>MovieIndexPage</h1>
             <div className="MovieIndex">
                 {movies.map((movie, idx) => (
-                    <MovieDetail movie={movie} index={idx} />
+                    <MovieCard movie={movie} index={idx} />
                 ))}
             </div>
         </div>
