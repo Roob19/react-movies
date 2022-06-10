@@ -11,6 +11,7 @@ import { CCard,
         CListGroupItem, 
         CCardLink, 
         CCardFooter } from '@coreui/react';
+import './MovieCard.css'
 
 export default function MovieCard() {
     return (

@@ -5,6 +5,7 @@ import { CForm,
     CFormText, 
     CFormInput, 
     CButton } from '@coreui/react';
+import './SignUpForm.css'
 
 export default class SignUpForm extends Component {
 

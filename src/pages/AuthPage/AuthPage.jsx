@@ -2,6 +2,7 @@ import SignUpForm from '../../components/SignUpForm/SignUpForm';
 import LoginForm from '../../components/LoginForm/LoginForm';
 import { useState } from 'react';
 import { CContainer, CForm, CButton } from '@coreui/react';
+import './AuthPage.css';
 
 export default function AuthPage ({setUser}) {
     

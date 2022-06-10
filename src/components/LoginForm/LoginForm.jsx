@@ -5,6 +5,7 @@ import { CForm,
         CFormText, 
         CFormInput, 
         CButton } from '@coreui/react';
+import './LoginForm.css'
 
 export default function LogIn({setUser}) {
     

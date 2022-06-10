@@ -1,5 +1,6 @@
 import React from 'react';
 import MovieCard from "../../components/MovieCard/MovieCard";
+import './MovieIndex,css'
 
 export default function MovieIndex({movies}) {
     return (

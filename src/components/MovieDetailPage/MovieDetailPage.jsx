@@ -1,16 +1,17 @@
 import React from 'react';
 import { useParams } from 'react-router-dom';
+import './MovieDetail.css';
 
 export default function MovieDetail({movies}) {
-    let { movieName } = useParams();
-    let movie = movies.find((mov) => mov.title === movieName);
+    // let { movieName } = useParams();
+    // let movie = movies.find((mov) => mov.title === movieName);
     return (
         <div className="MovieDetail">
-            <h1>{movie.title}</h1>
-            <p>Debut: {movie.release_date}.toLocalDateString()</p>
-            <img src={movie.poster_path} alt={movie.title} />
+            <h1>{movies.title}</h1>
+            <p>Debut: {movies.release_date}.toLocalDateString()</p>
+            <img src={movies.poster_path} alt={movies.title} />
             <ul>Cast: 
-                {movie.cast.map((actor) => {
+                {movies.cast.map((actor) => {
                     return <li key={actor}>{actor}</li>;
                 })}
             </ul>
