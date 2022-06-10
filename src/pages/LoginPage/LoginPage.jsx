@@ -1,10 +1,11 @@
 import LoginForm from "../../components/LoginForm/LoginForm";
+import { CForm, CFormText } from '@coreui/react';
 
 export default function LoginPage({setUser}) {
     return (
-        <main>
-            <h1>LoginPage</h1>
+        <CForm>
+            <CFormText>LoginPage</CFormText>
             <LoginForm setUser={setUser} />
-        </main>
+        </CForm>
     );
 }
