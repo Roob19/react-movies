@@ -21,13 +21,13 @@ export default function App() {
             <NavBar user={user} setUser={setUser} />
             <Switch>
               <Route path="/movies/detail">
-                <MovieDetail />
+                <MovieDetail movies={movies} />
               </Route>
               <Route path="/actors">
                 <ActorIndexPage movies={movies} />
               </Route>
               <Route path="/movies">
-                <MovieIndexPage movies={movies} />
+                <MovieIndexPage movies={movies} user={user} />
               </Route>
               <Redirect to="/movies" />
             </Switch>

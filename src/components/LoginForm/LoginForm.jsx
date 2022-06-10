@@ -32,16 +32,14 @@ export default function LogIn({setUser}) {
 
     return (
         <div>
-            <div className="form-container" onSubmit={handleSubmit}>
-                <CForm autoComplete="off">
-                    {/* <CFormText>{credentials.name}</CFormText> */}
+            <CForm autoComplete="off" className="form-container" onSubmit={handleSubmit}>
+                {/* <CFormText>{credentials.name}</CFormText> */}
                     <CFormLabel>Email: </CFormLabel>
                     <CFormInput type="text" name="email" value={credentials.email} onChange={handleChange} required />
                     <CFormLabel>Password</CFormLabel>
                     <CFormInput type="password" name="password" value={credentials.password} onChange={handleChange} required/>
-                    <CButton type="submit">LOG IN</CButton>
-                </CForm>
-            </div>
+                <CButton type="submit">LOG IN</CButton>
+            </CForm>
             <p className="error-message">&nbsp;{error}</p>
         </div>
     );
